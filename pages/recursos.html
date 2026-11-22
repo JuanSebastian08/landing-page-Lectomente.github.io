@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía - LectoMente</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <script src="../js/menu.js" defer></script>
+  <script src="../js/subir.js" defer></script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <a class="marca" href="index.html">
+        <img src="../assets/images/logo.png" alt="LectoMente" width="42" height="42">
+        <span>LectoMente</span>
+      </a>
+      <button class="btn-menu" id="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="navegacion">
+        <span class="hamburguesa"></span>
+      </button>
+      <nav class="navegacion" id="navegacion" aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#caracteristicas">Características</a></li>
+          <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+          <li><a href="index.html#testimonios">Testimonios</a></li>
+          <li><a href="index.html#accesibilidad">Accesibilidad</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="recursos.html">Guía</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+        <a class="boton boton-header" href="onboarding.html">Instalar extensión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="seccion">
+      <div class="contenedor">
+        <p class="etiqueta">Guía</p>
+        <h1>Cómo empezar a leer con LectoMente</h1>
+        <p>Esta página resume la instalación y los primeros ajustes. No reemplaza la extensión: solo explica el
+          recorrido.</p>
+
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <img class="icono-tarjeta" src="../assets/icons/instalar.png" alt="" width="48" height="48" loading="lazy">
+            <h3>1. Instalar</h3>
+            <p>Abre la tienda de tu navegador, busca LectoMente y confirma el permiso para modificar el aspecto de la
+              página que estás leyendo.</p>
+          </article>
+          <article class="tarjeta">
+            <img class="icono-tarjeta" src="../assets/icons/perfil.png" alt="" width="48" height="48" loading="lazy">
+            <h3>2. Primer perfil</h3>
+            <p>En el onboarding eliges si te cuesta más sostener la atención, distinguir palabras, ambas cosas, o si
+              prefieres configurar tú mismo.</p>
+          </article>
+          <article class="tarjeta">
+            <img class="icono-tarjeta" src="../assets/icons/leer.png" alt="" width="48" height="48" loading="lazy">
+            <h3>3. Leer y ajustar</h3>
+            <p>Desde la barra inferior puedes pausar la voz, cambiar el tamaño del bloque, activar Bionic Reading o
+              quitar distracciones.</p>
+          </article>
+        </div>
+
+        <div class="hero-botones" style="margin-top: 2rem;">
+          <a class="boton" href="index.html#contacto">Tengo una duda</a>
+          <a class="boton" href="onboarding.html">Instalar y configurar mi perfil</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-contenido">
+        <div>
+          <img class="logo-pie" src="../assets/images/logo.png" alt="" width="40" height="40" loading="lazy">
+          <h3>LectoMente</h3>
+          <p>Lectura adaptativa para personas neurodivergentes.</p>
+        </div>
+        <nav class="pie-nav" aria-label="Pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="index.html#contacto">Contacto</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; 2026 LectoMente.</p>
+    </div>
+  </footer>
+
+  <button type="button" class="btn-subir" id="btn-subir" aria-label="Volver arriba" title="Volver arriba">&#8593;</button>
+</body>
+
+</html>

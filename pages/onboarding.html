@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configura tu perfil - LectoMente</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- onboarding.html-->
+    <script src="../js/perfil.js" defer></script>
+    <script src="../js/onboarding.js" defer></script>
+</head>
+
+<body class="app">
+
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="app-cabecera">
+        <div class="app-barra">
+            <a class="app-marca" href="index.html" aria-label="LectoMente, volver al inicio">
+                <img src="../assets/images/logo.png" alt="" width="32" height="32">
+                <span>LectoMente</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="contenido" class="app-principal">
+        <div class="app-dos-columnas">
+
+            <!-- ============ IZQUIERDA: formulario largo de 5 pasos ============ -->
+            <section class="app-tarjeta onb-tarjeta" aria-label="Preguntas para tu perfil">
+
+                <div class="puntos" aria-hidden="true">
+                    <span class="punto" id="punto-1"></span><span class="punto-linea" id="linea-1"></span>
+                    <span class="punto" id="punto-2"></span><span class="punto-linea" id="linea-2"></span>
+                    <span class="punto" id="punto-3"></span><span class="punto-linea" id="linea-3"></span>
+                    <span class="punto" id="punto-4"></span><span class="punto-linea" id="linea-4"></span>
+                    <span class="punto" id="punto-5"></span>
+                </div>
+                <p class="app-nota" id="texto-paso" aria-live="polite">Paso 1 de 5</p>
+
+                <div class="onb-cuerpo">
+
+                    <!-- Paso 1 -->
+                    <fieldset class="paso-form" id="paso-1">
+                        <legend>¿Para qué usarás LectoMente?</legend>
+                        <p class="onb-ayuda">Elige la opción que más se parezca a ti. Podrás cambiarlo después.</p>
+                        <div class="app-opciones">
+                            <label class="opcion"><input type="radio" name="uso" value="estudio"><span
+                                    class="opcion-marca"></span><span>Estudio</span></label>
+                            <label class="opcion"><input type="radio" name="uso" value="trabajo"><span
+                                    class="opcion-marca"></span><span>Trabajo</span></label>
+                            <label class="opcion"><input type="radio" name="uso" value="acompano"><span
+                                    class="opcion-marca"></span><span>Acompaño a otras personas (profesional de
+                                    apoyo)</span></label>
+                        </div>
+                        <p class="app-estado" id="error-1" aria-live="polite"></p>
+                    </fieldset>
+
+                    <!-- Paso 2 -->
+                    <fieldset class="paso-form" id="paso-2" hidden>
+                        <legend>¿Qué te cuesta más al leer?</legend>
+                        <p class="onb-ayuda">Elige la opción que más se parezca a ti. Podrás cambiarlo después.</p>
+                        <div class="app-opciones">
+                            <label class="opcion"><input type="radio" name="dificultad" value="tdah"><span
+                                    class="opcion-marca"></span><span>Me distraigo con facilidad (TDAH)</span></label>
+                            <label class="opcion"><input type="radio" name="dificultad" value="dislexia"><span
+                                    class="opcion-marca"></span><span>Me cuesta distinguir letras y palabras
+                                    (dislexia)</span></label>
+                            <label class="opcion"><input type="radio" name="dificultad" value="ambas"><span
+                                    class="opcion-marca"></span><span>Ambas cosas</span></label>
+                            <label class="opcion"><input type="radio" name="dificultad" value="manual"><span
+                                    class="opcion-marca"></span><span>Prefiero configurarlo yo</span></label>
+                        </div>
+                        <p class="app-estado" id="error-2" aria-live="polite"></p>
+                    </fieldset>
+
+                    <!-- Paso 3 -->
+                    <fieldset class="paso-form" id="paso-3" hidden>
+                        <legend>¿Cómo te gusta ver el texto?</legend>
+                        <p class="onb-ayuda">Elige una fuente y ajusta el tamaño y el espaciado. Mira la vista previa.</p>
+                        <div class="app-opciones">
+                            <label class="opcion"><input type="radio" name="fuente" value="atkinson"><span
+                                    class="opcion-marca"></span><span>Atkinson Hyperlegible</span></label>
+                            <label class="opcion"><input type="radio" name="fuente" value="lexend"><span
+                                    class="opcion-marca"></span><span>Lexend</span></label>
+                        </div>
+                        <div class="onb-campo">
+                            <label for="p3-tam">Tamaño de letra <output class="onb-valor" id="p3-tam-valor"
+                                    for="p3-tam">18 px</output></label>
+                            <input type="range" id="p3-tam" min="14" max="28" step="1" value="18">
+                        </div>
+                        <div class="onb-campo">
+                            <label for="p3-esp">Espaciado <output class="onb-valor" id="p3-esp-valor"
+                                    for="p3-esp">150%</output></label>
+                            <input type="range" id="p3-esp" min="120" max="200" step="5" value="150">
+                        </div>
+                        <div class="vista-previa">
+                            <p class="app-nota">Vista previa</p>
+                            <div class="vista-texto" id="vista-previa-3"></div>
+                        </div>
+                        <p class="app-estado" id="error-3" aria-live="polite"></p>
+                    </fieldset>
+
+                    <!-- Paso 4 -->
+                    <fieldset class="paso-form" id="paso-4" hidden>
+                        <legend>¿Qué apoyos quieres activar?</legend>
+                        <p class="onb-ayuda">Puedes marcar varios. Podrás cambiarlos mientras lees.</p>
+                        <div class="app-opciones">
+                            <label class="opcion cuadrada"><input type="checkbox" id="ap-pausas"><span
+                                    class="opcion-marca"></span><span>Pausas sugeridas</span></label>
+                            <label class="opcion cuadrada"><input type="checkbox" id="ap-sin"><span
+                                    class="opcion-marca"></span><span>Modo sin distracciones</span></label>
+                            <label class="opcion cuadrada"><input type="checkbox" id="ap-voz"><span
+                                    class="opcion-marca"></span><span>Lectura en voz alta</span></label>
+                            <label class="opcion cuadrada"><input type="checkbox" id="ap-guia"><span
+                                    class="opcion-marca"></span><span>Guía de línea</span></label>
+                            <label class="opcion cuadrada"><input type="checkbox" id="ap-ninguno"><span
+                                    class="opcion-marca"></span><span>Ninguno por ahora</span></label>
+                        </div>
+                        <p class="app-estado" id="error-4" aria-live="polite"></p>
+                    </fieldset>
+
+                    <!-- Paso 5 -->
+                    <div class="paso-form" id="paso-5" hidden role="group" aria-labelledby="titulo-paso-5">
+                        <h2 class="onb-titulo" id="titulo-paso-5">Revisa tu perfil</h2>
+                        <p class="onb-ayuda">Esto es lo que elegiste. Si algo no te convence, vuelve con «Atrás».</p>
+                        <dl class="resumen" id="resumen"></dl>
+                        <p class="app-estado" id="error-5" aria-live="polite"></p>
+                    </div>
+
+                </div>
+
+                <div class="onb-pie">
+                    <button type="button" class="app-boton-sec" id="btn-atras">Atrás</button>
+                    <button type="button" class="app-boton" id="btn-continuar">Continuar</button>
+                </div>
+            </section>
+
+            <!-- ============ DERECHA: tarjeta "Tu perfil de accesibilidad" ============ -->
+            <aside class="app-tarjeta onb-tarjeta" aria-labelledby="titulo-perfil">
+                <div class="onb-cuerpo">
+                    <h2 class="onb-titulo" id="titulo-perfil">Tu perfil de accesibilidad</h2>
+                    <p class="onb-ayuda">Se aplicará automáticamente cada vez que abras un texto.</p>
+
+                    <div class="app-grupo-ajustes">
+                        <div class="ajuste">
+                            <label for="c-fuente">Fuente</label>
+                            <select id="c-fuente">
+                                <option value="atkinson">Atkinson Hyperlegible</option>
+                                <option value="lexend">Lexend</option>
+                            </select>
+                        </div>
+                        <div class="ajuste">
+                            <label for="c-tam">Tamaño de letra <output class="onb-valor" id="c-tam-valor"
+                                    for="c-tam">18 px</output></label>
+                            <input type="range" id="c-tam" min="14" max="28" step="1" value="18">
+                        </div>
+                        <div class="ajuste">
+                            <label for="c-esp">Espaciado <output class="onb-valor" id="c-esp-valor"
+                                    for="c-esp">150%</output></label>
+                            <input type="range" id="c-esp" min="120" max="200" step="5" value="150">
+                        </div>
+                        <div class="ajuste">
+                            <span class="ajuste-nombre" id="n-oscuro">Modo oscuro</span>
+                            <button type="button" class="interruptor" id="c-oscuro" role="switch" aria-checked="false"
+                                aria-labelledby="n-oscuro"><span class="int-pista"><span
+                                        class="int-bola"></span></span><span class="int-estado">Desactivado</span></button>
+                        </div>
+                        <div class="ajuste">
+                            <span class="ajuste-nombre" id="n-bionic">Bionic Reading</span>
+                            <button type="button" class="interruptor" id="c-bionic" role="switch" aria-checked="false"
+                                aria-labelledby="n-bionic"><span class="int-pista"><span
+                                        class="int-bola"></span></span><span class="int-estado">Desactivado</span></button>
+                        </div>
+                        <div class="ajuste">
+                            <span class="ajuste-nombre" id="n-sin">Modo sin distracciones</span>
+                            <button type="button" class="interruptor" id="c-sin" role="switch" aria-checked="false"
+                                aria-labelledby="n-sin"><span class="int-pista"><span
+                                        class="int-bola"></span></span><span class="int-estado">Desactivado</span></button>
+                        </div>
+                    </div>
+
+                    <div class="vista-previa">
+                        <p class="app-nota">Vista previa</p>
+                        <div class="vista-texto" id="vista-previa"></div>
+                    </div>
+
+                    <p class="app-estado" id="estado-perfil" aria-live="polite"></p>
+                </div>
+
+                <div class="onb-pie">
+                    <button type="button" class="app-boton-sec" id="btn-restaurar">Restaurar</button>
+                    <button type="button" class="app-boton" id="btn-guardar">Guardar perfil</button>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

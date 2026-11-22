@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparación asistida - LectoMente</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- preparacion.html -->
+    <script src="../js/perfil.js" defer></script>
+    <script src="../js/preparacion.js" defer></script>
+</head>
+
+<body class="app">
+
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="app-cabecera">
+        <div class="app-barra">
+            <a class="app-marca" href="index.html" aria-label="LectoMente, volver al inicio">
+                <img src="../assets/images/logo.png" alt="" width="32" height="32">
+                <span>LectoMente</span>
+            </a>
+            <span class="app-centro">Preparación asistida</span>
+            <span class="app-espaciador" aria-hidden="true"></span>
+        </div>
+    </header>
+
+    <main id="contenido" class="app-principal">
+
+        <p class="app-aviso" id="aviso-pdf">Demostración: en esta versión los PDF se muestran con un texto de ejemplo</p>
+
+        <div class="app-dos-columnas">
+
+            <!-- ============ IZQUIERDA ============ -->
+            <div class="app-columna">
+
+                <!-- Cargar texto (dos formas: subir archivo o pegar texto) -->
+                <section class="app-tarjeta" id="tarjeta-carga" aria-labelledby="titulo-carga">
+                    <h2 id="titulo-carga">Cargar texto</h2>
+                    <p class="app-nota">Sube un archivo o pega un texto. Elige la forma que prefieras.</p>
+
+                    <div class="carga-opcion">
+                        <label for="archivo">Subir un archivo (.pdf o .txt, máximo 5 MB)</label>
+                        <input type="file" id="archivo" accept=".pdf,.txt,application/pdf,text/plain">
+                    </div>
+
+                    <p class="carga-separador" aria-hidden="true">— o —</p>
+
+                    <div class="carga-opcion">
+                        <label for="pegado">Pegar texto</label>
+                        <textarea id="pegado" rows="6" placeholder="Pega aquí el texto que quieres leer"></textarea>
+                        <button type="button" class="app-boton" id="btn-usar-pegado">Usar este texto</button>
+                    </div>
+
+                    <p class="app-estado" id="estado-carga" aria-live="polite"></p>
+                    <div class="carga-acciones">
+                        <button type="button" class="app-boton-sec" id="btn-cancelar" hidden>Cancelar y mantener el texto
+                            actual</button>
+                    </div>
+                </section>
+
+                <!-- Texto cargado -->
+                <section class="app-tarjeta" id="tarjeta-cargado" aria-labelledby="titulo-cargado" hidden>
+                    <div class="cargado-cabecera">
+                        <h2 id="titulo-cargado">Texto cargado</h2>
+                        <button type="button" class="app-boton-sec" id="btn-cambiar">Cambiar texto</button>
+                    </div>
+                    <p class="cargado-nombre" id="nombre-texto"></p>
+                    <p class="cargado-estado">
+                        <span>Texto cargado correctamente</span>
+                        <img src="../assets/icons/check.png" alt="" width="28" height="28">
+                    </p>
+                </section>
+
+                <section class="app-tarjeta" aria-labelledby="titulo-resumen">
+                    <h2 id="titulo-resumen">Resumen previo</h2>
+                    <ul class="resumen-lista" id="lista-resumen"></ul>
+                </section>
+
+                <section class="app-tarjeta" aria-labelledby="titulo-nivel">
+                    <h2 id="titulo-nivel">Nivel de fragmentación</h2>
+                    <div class="segmentado" role="radiogroup" aria-labelledby="titulo-nivel">
+                        <label class="segmento"><input type="radio" name="nivel" value="muy-corto"><span>Muy
+                                corto</span></label>
+                        <label class="segmento"><input type="radio" name="nivel"
+                                value="mediano"><span>Mediano</span></label>
+                        <label class="segmento"><input type="radio" name="nivel" value="parrafos"><span>Por
+                                párrafos</span></label>
+                    </div>
+                    <p class="app-nota" style="margin-top: 0.75rem;">Puedes cambiarlo también mientras lees.</p>
+                </section>
+            </div>
+
+            <!-- ============ DERECHA ============ -->
+            <div class="app-columna">
+
+                <section class="app-tarjeta" aria-live="polite">
+                    <p class="tiempo-grande" id="tiempo">— min</p>
+                    <p class="app-nota" style="margin-top: 0.5rem;">de lectura</p>
+                </section>
+
+                <section class="app-tarjeta" aria-labelledby="titulo-vista">
+                    <h2 id="titulo-vista">Vista previa de bloques</h2>
+                    <p id="cantidad-bloques" aria-live="polite">0 bloques</p>
+                    <div id="vista-bloques"></div>
+                    <p id="mas-bloques" style="margin-top: 0.75rem;" hidden aria-hidden="true">…</p>
+                </section>
+
+                <div>
+                    <button type="button" class="app-boton-acento app-boton-ancho" id="btn-iniciar">Iniciar
+                        lectura</button>
+                    <p class="app-estado" id="estado-iniciar" aria-live="polite"></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

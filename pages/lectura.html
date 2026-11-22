@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectura - LectoMente</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- lectura.html -->
+    <script src="../js/perfil.js" defer></script>
+    <script src="../js/lectura.js" defer></script>
+</head>
+
+<body class="app">
+
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <!-- Barra superior: título, progreso y salir -->
+    <header class="lectura-barra">
+        <div class="lectura-titulo">
+            <a class="app-marca" href="index.html" aria-label="LectoMente, ir al inicio">
+                <img src="../assets/images/logo.png" alt="" width="32" height="32">
+            </a>
+            <h1 id="titulo-texto">La fotosíntesis</h1>
+        </div>
+
+        <div class="lectura-progreso">
+            <p id="estado-progreso" aria-live="polite">Bloque 1 de 1 · 1 min restante</p>
+            <div class="barra-progreso" id="barra-progreso" role="progressbar" aria-label="Progreso de lectura"
+                aria-valuemin="1" aria-valuemax="1" aria-valuenow="1">
+                <div class="barra-progreso-relleno" id="relleno-progreso"></div>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem;">
+            <a class="app-boton-sec" id="btn-personalizar" href="personalizar.html">Personalizar</a>
+            <a class="app-boton-sec" id="btn-salir" href="preparacion.html">Salir</a>
+        </div>
+    </header>
+
+    <main id="contenido">
+        <div class="lectura-contenido" id="contenido-lectura">
+
+            <!-- Texto: un bloque a la vez, cada oración en su propia línea -->
+            <section class="lectura-texto" id="zona-texto" tabindex="0"
+                aria-label="Texto de lectura. Usa las flechas arriba y abajo para cambiar de línea.">
+                <div id="lineas"></div>
+                <p class="lectura-guardado" id="estado-guardado" aria-live="polite">Posición guardada automáticamente
+                </p>
+                <p class="app-estado app-estado-lectura" id="estado-lectura" aria-live="polite"></p>
+            </section>
+
+            <!-- Tarjetas laterales: pausa, descanso, sugerencia y glosario -->
+            <aside class="lectura-lateral" id="lateral" aria-label="Avisos y glosario" aria-live="polite">
+
+                <section class="app-tarjeta tarjeta-pausa" id="tarjeta-pausa" hidden>
+                    <p id="texto-pausa">Llevas 25 minutos leyendo. ¿Quieres tomar una pausa?</p>
+                    <div class="acciones">
+                        <button type="button" class="app-boton-acento" id="btn-tomar-pausa">Tomar pausa</button>
+                        <button type="button" class="app-boton-sec" id="btn-seguir">Seguir leyendo</button>
+                    </div>
+                </section>
+
+                <section class="app-tarjeta tarjeta-descanso" id="tarjeta-descanso" hidden>
+                    <h2>Momento de descanso</h2>
+                    <p>Respira, estírate o toma un poco de agua. Tu lugar en el texto está guardado.</p>
+                    <div class="acciones">
+                        <button type="button" class="app-boton-acento" id="btn-volver-leer">Volver a leer</button>
+                    </div>
+                </section>
+
+                <section class="app-tarjeta tarjeta-aviso" id="tarjeta-dificultad" hidden>
+                    <p>Parece que este bloque te costó. ¿Quieres bloques más cortos?</p>
+                    <div class="acciones">
+                        <button type="button" class="app-boton-acento" id="btn-bloques-cortos">Sí, bloques más
+                            cortos</button>
+                        <button type="button" class="app-boton-sec" id="btn-no-cortos">Ahora no</button>
+                    </div>
+                </section>
+
+                <section class="app-tarjeta" id="tarjeta-glosario" hidden aria-labelledby="glosario-termino">
+                    <p class="glosario-etiqueta">Glosario</p>
+                    <h2 class="glosario-termino" id="glosario-termino">Cloroplasto</h2>
+                    <p id="glosario-definicion"></p>
+                    <div class="glosario-ejemplo">
+                        <strong>Ejemplo</strong>
+                        <p id="glosario-ejemplo"></p>
+                    </div>
+                    <div class="acciones">
+                        <button type="button" class="app-boton-sec" id="btn-cerrar-glosario">Cerrar</button>
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Barra inferior fija: todas las opciones visibles y con texto -->
+    <div class="barra-inferior" id="barra-inferior" role="region" aria-label="Opciones de lectura">
+
+        <div class="barra-grupo">
+            <div class="barra-fila" role="group" aria-label="Lectura en voz alta">
+                <button type="button" id="btn-reproducir">Reproducir</button>
+                <button type="button" id="btn-pausar">Pausar</button>
+                <button type="button" id="btn-detener">Detener</button>
+            </div>
+            <div class="barra-fila" role="group" aria-label="Velocidad de la voz">
+                <button type="button" data-voz="lenta" aria-pressed="false">Lenta</button>
+                <button type="button" data-voz="normal" aria-pressed="true">Normal</button>
+                <button type="button" data-voz="rapida" aria-pressed="false">Rápida</button>
+            </div>
+        </div>
+
+        <div class="barra-grupo barra-interruptores" role="group" aria-label="Ayudas de lectura">
+            <button type="button" class="interruptor" id="i-guia" role="switch" aria-checked="true"
+                aria-labelledby="n-guia"><span class="int-pista"><span class="int-bola"></span></span><span
+                    class="int-nombre" id="n-guia">Guía de línea</span><span class="int-estado">Activado</span></button>
+            <button type="button" class="interruptor" id="i-bionic" role="switch" aria-checked="false"
+                aria-labelledby="n-bionic"><span class="int-pista"><span class="int-bola"></span></span><span
+                    class="int-nombre" id="n-bionic">Bionic Reading</span><span
+                    class="int-estado">Desactivado</span></button>
+            <button type="button" class="interruptor" id="i-ritmo" role="switch" aria-checked="false"
+                aria-labelledby="n-ritmo"><span class="int-pista"><span class="int-bola"></span></span><span
+                    class="int-nombre" id="n-ritmo">Ritmo guiado</span><span class="int-estado">Desactivado</span></button>
+            <button type="button" class="interruptor" id="i-sin" role="switch" aria-checked="false"
+                aria-labelledby="n-sin"><span class="int-pista"><span class="int-bola"></span></span><span
+                    class="int-nombre" id="n-sin">Sin distracciones</span><span
+                    class="int-estado">Desactivado</span></button>
+        </div>
+
+        <div class="barra-grupo">
+            <label class="sr-solo" for="sel-nivel">Tamaño de bloque</label>
+            <select id="sel-nivel">
+                <option value="muy-corto">Tamaño de bloque: Muy corto</option>
+                <option value="mediano">Tamaño de bloque: Mediano</option>
+                <option value="parrafos">Tamaño de bloque: Por párrafos</option>
+            </select>
+            <div class="barra-fila">
+                <button type="button" id="btn-anterior">Anterior</button>
+                <button type="button" id="btn-siguiente">Siguiente</button>
+            </div>
+        </div>
+
+        <p class="mensaje-voz" id="mensaje-voz" aria-live="polite"></p>
+    </div>
+
+</body>
+
+</html>

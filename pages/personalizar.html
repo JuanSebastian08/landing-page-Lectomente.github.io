@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizar lectura - LectoMente</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- personalizar.html -->
+    <script src="../js/perfil.js" defer></script>
+    <script src="../js/personalizar.js" defer></script>
+</head>
+
+<body class="app">
+
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="lectura-barra">
+        <div class="lectura-titulo">
+            <a class="app-marca" href="index.html" aria-label="LectoMente, ir al inicio">
+                <img src="../assets/images/logo.png" alt="" width="32" height="32">
+            </a>
+            <h1>La fotosíntesis</h1>
+        </div>
+        <a class="app-boton-sec" id="btn-volver" href="lectura.html">Volver a la lectura</a>
+    </header>
+
+    <main id="contenido" class="app-principal">
+        <div class="app-dos-columnas pers-columnas">
+
+            <!-- ============ IZQUIERDA: vista previa ============ -->
+            <div class="app-columna">
+                <p class="app-nota">Los cambios se aplican al instante</p>
+                <section class="pers-vista-tarjeta" aria-labelledby="titulo-vista">
+                    <h2 id="titulo-vista">Vista previa</h2>
+                    <div class="vista-texto" id="vista-previa"></div>
+                </section>
+            </div>
+
+            <!-- ============ DERECHA: panel "Personalizar lectura" ============ -->
+            <section class="pers-panel" aria-labelledby="titulo-panel">
+                <h2 id="titulo-panel">Personalizar lectura</h2>
+
+                <!-- Apariencia -->
+                <div class="pers-seccion" role="group" aria-labelledby="h-apariencia">
+                    <h3 id="h-apariencia">Apariencia</h3>
+
+                    <div class="pers-fila">
+                        <span id="n-oscuro">Modo oscuro</span>
+                        <button type="button" class="interruptor" id="i-oscuro" role="switch" aria-checked="false"
+                            aria-labelledby="n-oscuro"><span class="int-pista"><span
+                                    class="int-bola"></span></span><span class="int-estado">Desactivado</span></button>
+                    </div>
+
+                    <fieldset class="pers-bloque">
+                        <legend style="font-size: 16px; font-weight: 400;">Color de fondo</legend>
+                        <div class="colores">
+                            <label class="color-opcion"><input type="radio" name="color" value="ninguno"><span
+                                    class="color-muestra muestra-ninguno"></span><span>Ninguno</span></label>
+                            <label class="color-opcion"><input type="radio" name="color" value="sepia"><span
+                                    class="color-muestra muestra-sepia"></span><span>Sepia</span></label>
+                            <label class="color-opcion"><input type="radio" name="color" value="menta"><span
+                                    class="color-muestra muestra-menta"></span><span>Menta</span></label>
+                            <label class="color-opcion"><input type="radio" name="color" value="gris"><span
+                                    class="color-muestra muestra-gris"></span><span>Gris</span></label>
+                        </div>
+                    </fieldset>
+
+                    <div class="pers-bloque">
+                        <div class="pers-fila">
+                            <label for="p-fuente">Fuente</label>
+                            <select id="p-fuente">
+                                <option value="atkinson">Atkinson Hyperlegible</option>
+                                <option value="lexend">Lexend</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pers-bloque">
+                        <div class="pers-fila">
+                            <label for="p-tam">Tamaño de letra</label>
+                            <output id="v-tam" for="p-tam">18 px</output>
+                        </div>
+                        <input type="range" id="p-tam" min="14" max="28" step="1" value="18">
+                    </div>
+                </div>
+
+                <!-- Espaciado -->
+                <div class="pers-seccion" role="group" aria-labelledby="h-espaciado">
+                    <h3 id="h-espaciado">Espaciado</h3>
+
+                    <div class="pers-bloque">
+                        <div class="pers-fila">
+                            <label for="p-interlineado">Interlineado</label>
+                            <output id="v-interlineado" for="p-interlineado">150%</output>
+                        </div>
+                        <input type="range" id="p-interlineado" min="120" max="200" step="5" value="150">
+                    </div>
+
+                    <div class="pers-bloque">
+                        <div class="pers-fila">
+                            <label for="p-palabras">Espacio entre palabras</label>
+                            <output id="v-palabras" for="p-palabras">0 px</output>
+                        </div>
+                        <input type="range" id="p-palabras" min="0" max="4" step="0.5" value="0">
+                    </div>
+
+                    <button type="button" class="app-boton-sec" id="btn-restaurar">Restaurar valores</button>
+                </div>
+
+                <!-- Lectura -->
+                <div class="pers-seccion" role="group" aria-labelledby="h-lectura">
+                    <h3 id="h-lectura">Lectura</h3>
+
+                    <div class="pers-fila">
+                        <span id="n-bionic">Bionic Reading</span>
+                        <button type="button" class="interruptor" id="i-bionic" role="switch" aria-checked="false"
+                            aria-labelledby="n-bionic"><span class="int-pista"><span
+                                    class="int-bola"></span></span><span class="int-estado">Desactivado</span></button>
+                    </div>
+
+                    <div class="pers-fila">
+                        <span id="n-ritmo">Ritmo guiado</span>
+                        <button type="button" class="interruptor" id="i-ritmo" role="switch" aria-checked="false"
+                            aria-labelledby="n-ritmo"><span class="int-pista"><span
+                                    class="int-bola"></span></span><span class="int-estado">Desactivado</span></button>
+                    </div>
+
+                    <div class="pers-bloque">
+                        <div class="pers-fila">
+                            <label for="p-velocidad">Velocidad</label>
+                            <output id="v-velocidad" for="p-velocidad">1x</output>
+                        </div>
+                        <input type="range" id="p-velocidad" min="0.5" max="2" step="0.1" value="1">
+                    </div>
+
+                    <div class="pers-bloque" role="group" aria-labelledby="n-voz">
+                        <div class="pers-fila"><span id="n-voz">Velocidad de voz</span></div>
+                        <div class="segmentado">
+                            <button type="button" data-voz="lenta" aria-pressed="false">Lenta</button>
+                            <button type="button" data-voz="normal" aria-pressed="true">Normal</button>
+                            <button type="button" data-voz="rapida" aria-pressed="false">Rápida</button>
+                        </div>
+                    </div>
+
+                    <div class="pers-fila">
+                        <span id="n-transiciones">Transiciones graduales</span>
+                        <button type="button" class="interruptor" id="i-transiciones" role="switch"
+                            aria-checked="true" aria-labelledby="n-transiciones"><span class="int-pista"><span
+                                    class="int-bola"></span></span><span class="int-estado">Activado</span></button>
+                    </div>
+                    <p class="nota-movimiento">Tu sistema pidió menos movimiento, así que las transiciones no se
+                        mostrarán.</p>
+                </div>
+
+                <div class="pers-guardar">
+                    <button type="button" class="app-boton-acento app-boton-ancho" id="btn-guardar">Guardar en mi
+                        perfil</button>
+                    <p class="app-nota">Se aplicará en tus próximas lecturas</p>
+                    <p class="app-estado" id="estado-guardado" aria-live="polite"></p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

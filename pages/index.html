@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - LectoMente</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/filtros.js" defer></script>
+    <script src="../js/faq.js" defer></script>
+    <script src="../js/testimonios.js" defer></script>
+    <script src="../js/contacto.js" defer></script>
+    <script src="../js/subir.js" defer></script>
+</head>
+
+<body>
+
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="cabecera">
+        <div class="contenedor barra">
+            <a class="marca" href="index.html">
+                <img src="../assets/images/logo.png" alt="LectoMente" width="42" height="42">
+                <span>LectoMente</span>
+            </a>
+
+            <button class="btn-menu" id="btn-menu" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navegacion">
+                <span class="hamburguesa"></span>
+            </button>
+
+            <nav class="navegacion" id="navegacion" aria-label="Navegación principal">
+                <ul class="menu">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#caracteristicas">Características</a></li>
+                    <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+                    <li><a href="index.html#testimonios">Testimonios</a></li>
+                    <li><a href="index.html#accesibilidad">Accesibilidad</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="recursos.html">Guía</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+                <a class="boton boton-header" href="onboarding.html">Instalar extensión</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <section id="inicio" class="hero contenedor">
+            <div class="hero-texto">
+                <p class="etiqueta">Extensión de navegador</p>
+                <h1>Lee con calma, sin distracciones.</h1>
+                <p class="hero-descripcion">
+                    LectoMente adapta la lectura en pantalla para personas con TDAH y dislexia.
+                    Parte el texto en bloques, sugiere pausas y ajusta la tipografía a tu ritmo.
+                </p>
+                <div class="hero-botones">
+                    <a class="boton" href="onboarding.html">Instalar ahora</a>
+                    <a class="enlace" href="recursos.html">Conocer la guía</a>
+                </div>
+            </div>
+            <figure class="hero-imagen">
+                <img src="../assets/images/hero-libro.jpg" alt="Ilustración de un libro abierto con el texto dividido en bloques y un aviso de pausa" width="600" height="400">
+            </figure>
+        </section>
+
+        <section id="caracteristicas" class="seccion">
+            <div class="contenedor">
+                <p class="etiqueta">Características</p>
+                <h2>Herramientas para leer sin sobrecarga</h2>
+                <p class="intro-seccion">Elige un perfil y revisa lo que más te puede servir.</p>
+
+                <div class="filtros" role="group" aria-label="Filtrar por perfil">
+                    <button class="filtro activo" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+                    <button class="filtro" type="button" data-filtro="tdah" aria-pressed="false">Personas con TDAH</button>
+                    <button class="filtro" type="button" data-filtro="dislexia" aria-pressed="false">Personas con dislexia</button>
+                    <button class="filtro" type="button" data-filtro="profesionales" aria-pressed="false">Profesionales de apoyo</button>
+                </div>
+
+                <div class="tarjetas" id="lista-caracteristicas">
+                    <article class="tarjeta" data-categoria="tdah dislexia">
+                        <img class="icono-tarjeta" src="../assets/icons/bloques.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Fragmentación en bloques</h3>
+                        <p>El texto largo se divide en partes cortas. Puedes elegir bloques más chicos o más grandes
+                            según cómo te sientas ese día.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="tdah">
+                        <img class="icono-tarjeta" src="../assets/icons/pausa.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Pausas sugeridas</h3>
+                        <p>Si llevas mucho rato leyendo, aparece un aviso para descansar. Puedes seguir desde el mismo
+                            punto.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="tdah dislexia">
+                        <img class="icono-tarjeta" src="../assets/icons/sin-distracciones.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Modo sin distracciones</h3>
+                        <p>Oculta anuncios y menús para que solo quede el texto.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="dislexia">
+                        <img class="icono-tarjeta" src="../assets/icons/bionic.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Bionic Reading</h3>
+                        <p>Marca el inicio de cada palabra para que la vista no se pierda en la línea.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="dislexia tdah">
+                        <img class="icono-tarjeta" src="../assets/icons/tipografia.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Fuente, tamaño y espaciado</h3>
+                        <p>Cambia la fuente, el tamaño, el interlineado y el espacio entre palabras. El cambio se ve al
+                            instante.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="tdah dislexia">
+                        <img class="icono-tarjeta" src="../assets/icons/voz.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Lectura en voz alta</h3>
+                        <p>Escucha el texto en velocidad lenta, normal o rápida. Puedes pausar y volver a empezar desde
+                            el mismo lugar.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="dislexia">
+                        <img class="icono-tarjeta" src="../assets/icons/oscuro.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Modo oscuro y color de fondo</h3>
+                        <p>Fondo oscuro o un tono sepia, menta o gris para cansar menos la vista.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="tdah">
+                        <img class="icono-tarjeta" src="../assets/icons/guia-visual.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Guía visual y ritmo</h3>
+                        <p>Resalta la línea que estás leyendo y puede avanzar sola a la velocidad que elijas.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="dislexia tdah">
+                        <img class="icono-tarjeta" src="../assets/icons/glosario.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Glosario en la misma página</h3>
+                        <p>Tocas una palabra difícil y ves una explicación corta sin salir del texto.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="tdah dislexia">
+                        <img class="icono-tarjeta" src="../assets/icons/perfil.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Perfil guardado</h3>
+                        <p>Tus ajustes se guardan y se aplican solos la próxima vez que abras un texto.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="profesionales">
+                        <img class="icono-tarjeta" src="../assets/icons/progreso.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Progreso del estudiante</h3>
+                        <p>Si la persona lo autoriza, el profesional ve el avance y las partes donde más se detuvo.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="tdah profesionales">
+                        <img class="icono-tarjeta" src="../assets/icons/tiempo.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Tiempo y punto de lectura</h3>
+                        <p>Muestra cuánto puede durar la lectura y recuerda dónde te quedaste.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="seccion fondo">
+            <div class="contenedor">
+                <p class="etiqueta">Uso</p>
+                <h2>Cómo funciona</h2>
+                <div class="pasos">
+                    <article class="paso">
+                        <span class="numero-paso">1</span>
+                        <h3>Instala la extensión</h3>
+                        <p>La agregas al navegador en unos segundos.</p>
+                    </article>
+                    <article class="paso">
+                        <span class="numero-paso">2</span>
+                        <h3>Elige tu perfil</h3>
+                        <p>Indicas si te cuesta más la atención, las palabras o ambas. Después puedes cambiarlo.</p>
+                    </article>
+                    <article class="paso">
+                        <span class="numero-paso">3</span>
+                        <h3>Lee con normalidad</h3>
+                        <p>Abres cualquier página. No tienes que copiar el texto a otra app.</p>
+                    </article>
+                    <article class="paso">
+                        <span class="numero-paso">4</span>
+                        <h3>Se va ajustando</h3>
+                        <p>Según cómo lees, cambia bloques, espacio y pausas.</p>
+                    </article>
+                    <article class="paso">
+                        <span class="numero-paso">5</span>
+                        <h3>Revisa tu avance</h3>
+                        <p>Ves tu progreso y, si quieres, lo compartes con quien te apoya.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="seccion">
+            <div class="contenedor">
+                <p class="etiqueta">Experiencias</p>
+                <h2>Testimonios</h2>
+
+                <div id="testimonialsContainer" class="tarjetas">
+                    <article class="tarjeta testimonio">
+                        <img src="../assets/images/testimonio-camila.jpg" alt="Ilustración de Camila R." class="foto-testimonio" width="80"
+                            height="80" loading="lazy">
+                        <blockquote>“Dividir el texto en bloques cortos me ayuda a terminar lecturas que antes
+                            abandonaba.”</blockquote>
+                        <p><strong>Camila R.</strong><br><span class="rol">Estudiante con TDAH</span></p>
+                    </article>
+                    <article class="tarjeta testimonio">
+                        <img src="../assets/images/testimonio-mateo.jpg" alt="Ilustración de Mateo L." class="foto-testimonio" width="80"
+                            height="80" loading="lazy">
+                        <blockquote>“El espaciado y el modo oscuro me cansan menos la vista cuando leo durante mucho
+                            tiempo.”</blockquote>
+                        <p><strong>Mateo L.</strong><br><span class="rol">Estudiante con dislexia</span></p>
+                    </article>
+                    <article class="tarjeta testimonio">
+                        <img src="../assets/images/testimonio-rosa.jpg" alt="Ilustración de Dra. Rosa M." class="foto-testimonio" width="80"
+                            height="80" loading="lazy">
+                        <blockquote>“El panel me muestra en qué parte se traba cada estudiante, sin esperar a la
+                            siguiente sesión.”</blockquote>
+                        <p><strong>Dra. Rosa M.</strong><br><span class="rol">Profesional de apoyo</span></p>
+                    </article>
+                </div>
+
+                <div class="bloque-formulario">
+                    <h3>Déjanos tu experiencia</h3>
+                    <form id="form-testimonio" class="formulario" novalidate>
+                        <div>
+                            <label for="testimonio-nombre">Nombre completo</label>
+                            <input type="text" id="testimonio-nombre" placeholder="Ej. Pedro Gómez" required>
+                        </div>
+
+                        <div>
+                            <label for="testimonio-rol">Perfil</label>
+                            <input type="text" id="testimonio-rol" placeholder="Ej. Estudiante, docente, familiar"
+                                required>
+                        </div>
+
+                        <div>
+                            <label for="testimonio-puntuacion">Calificación</label>
+                            <select id="testimonio-puntuacion" required>
+                                <option value="">Selecciona una puntuación</option>
+                                <option value="5">5/5 - Excelente</option>
+                                <option value="4">4/5 - Muy bueno</option>
+                                <option value="3">3/5 - Bueno</option>
+                                <option value="2">2/5 - Regular</option>
+                                <option value="1">1/5 - Deficiente</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="testimonio-comentario">Tu experiencia (máx. 500 caracteres)</label>
+                            <textarea id="testimonio-comentario" rows="4" maxlength="500"
+                                placeholder="Cuéntanos cómo te fue leyendo" required></textarea>
+                            <p class="nota"><span id="contador-caracteres">0</span>/500 caracteres</p>
+                        </div>
+
+                        <p id="aviso-testimonio" class="aviso" role="status" aria-live="polite"></p>
+                        <button type="submit" class="boton">Publicar testimonio</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="accesibilidad" class="seccion fondo">
+            <div class="contenedor">
+                <p class="etiqueta">Inclusión</p>
+                <h2>Accesibilidad</h2>
+                <p class="intro-seccion">La herramienta y esta página se pensaron para leer con menos esfuerzo.</p>
+                <div class="tarjetas">
+                    <article class="tarjeta">
+                        <img class="icono-tarjeta" src="../assets/icons/contraste.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Contraste cómodo</h3>
+                        <p>Fondo crema en lugar de blanco puro, y opción de modo oscuro o tonos suaves.</p>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="icono-tarjeta" src="../assets/icons/letra.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Letra que se puede ajustar</h3>
+                        <p>Tamaño, interlineado y espacio entre palabras se cambian sin recargar la página.</p>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="icono-tarjeta" src="../assets/icons/teclado.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Teclado y foco visible</h3>
+                        <p>Se puede recorrer con Tab. El elemento activo se marca con un borde claro.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="seccion">
+            <div class="contenedor">
+                <p class="etiqueta">Dudas</p>
+                <h2>Preguntas frecuentes</h2>
+                <div class="acordeon" id="acordeon-faq">
+                    <div class="item-faq">
+                        <button class="pregunta-faq" type="button" aria-expanded="false">¿Funciona en mi navegador?<span
+                                class="icono-faq" aria-hidden="true">+</span></button>
+                        <div class="respuesta-faq">
+                            <p>Sí, como extensión de Chrome, Firefox, Edge y Opera.</p>
+                        </div>
+                    </div>
+                    <div class="item-faq">
+                        <button class="pregunta-faq" type="button" aria-expanded="false">¿Qué hace mientras leo?<span
+                                class="icono-faq" aria-hidden="true">+</span></button>
+                        <div class="respuesta-faq">
+                            <p>Mira el tiempo, las relecturas y el avance para ajustar bloques, espacio y pausas. No
+                                guarda el texto de las páginas.</p>
+                        </div>
+                    </div>
+                    <div class="item-faq">
+                        <button class="pregunta-faq" type="button" aria-expanded="false">¿Puedo cambiar letra y
+                            colores?<span class="icono-faq" aria-hidden="true">+</span></button>
+                        <div class="respuesta-faq">
+                            <p>Sí. Fuente, tamaño, interlineado, modo oscuro, color de fondo y Bionic Reading se guardan
+                                en tu perfil.</p>
+                        </div>
+                    </div>
+                    <div class="item-faq">
+                        <button class="pregunta-faq" type="button" aria-expanded="false">¿Sirve para dislexia o
+                            TDAH?<span class="icono-faq" aria-hidden="true">+</span></button>
+                        <div class="respuesta-faq">
+                            <p>Está pensada para esas dos dificultades: menos texto de golpe, pausas, letra más clara y
+                                menos elementos alrededor.</p>
+                        </div>
+                    </div>
+                    <div class="item-faq">
+                        <button class="pregunta-faq" type="button" aria-expanded="false">¿Un profesional puede ver mi
+                            avance?<span class="icono-faq" aria-hidden="true">+</span></button>
+                        <div class="respuesta-faq">
+                            <p>Solo si aceptas la vinculación. Si la rechazas, no tiene acceso.</p>
+                        </div>
+                    </div>
+                    <div class="item-faq">
+                        <button class="pregunta-faq" type="button" aria-expanded="false">¿Tengo que configurar todo cada
+                            vez?<span class="icono-faq" aria-hidden="true">+</span></button>
+                        <div class="respuesta-faq">
+                            <p>No. El perfil guarda tus preferencias y las aplica al abrir un texto nuevo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion fondo">
+            <div class="contenedor dos-columnas">
+                <div>
+                    <p class="etiqueta">Contacto</p>
+                    <h2>Escríbenos</h2>
+                    <p>Si tienes una duda sobre la extensión, deja tu mensaje.</p>
+                    <p class="nota">Simulación del curso. No guarda datos ni envía correos.</p>
+                </div>
+                <form id="form-contacto" class="formulario" action="confirmacion.html" method="get" novalidate>
+                    <div>
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                    </div>
+                    <div>
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" required>
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte"
+                            required></textarea>
+                    </div>
+                    <p id="aviso-contacto" class="aviso" role="status" aria-live="polite"></p>
+                    <button type="submit" class="boton">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="cta-final" class="seccion cta-final">
+            <div class="contenedor texto-centrado">
+                <h2>Prueba LectoMente hoy</h2>
+                <p>Instala la extensión y empieza a leer con bloques, voz, pausas y tu propia configuración.</p>
+                <a class="boton boton-grande" href="onboarding.html">Instalar y configurar mi perfil</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <div class="pie-contenido">
+                <div>
+                    <img class="logo-pie" src="../assets/images/logo.png" alt="" width="40" height="40" loading="lazy">
+                    <h3>LectoMente</h3>
+                    <p>Lectura adaptativa para personas neurodivergentes.</p>
+                </div>
+                <nav class="pie-nav" aria-label="Pie de página">
+                    <a href="index.html#inicio">Inicio</a>
+                    <a href="index.html#caracteristicas">Características</a>
+                    <a href="recursos.html">Guía</a>
+                    <a href="index.html#contacto">Contacto</a>
+                </nav>
+            </div>
+            <p class="copyright">&copy; 2026 LectoMente.</p>
+        </div>
+    </footer>
+
+    <button type="button" class="btn-subir" id="btn-subir" aria-label="Volver arriba" title="Volver arriba">&#8593;</button>
+
+</body>
+
+</html>

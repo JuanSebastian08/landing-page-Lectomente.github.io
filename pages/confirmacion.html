@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación - LectoMente</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/subir.js" defer></script>
+</head>
+
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="cabecera">
+        <div class="contenedor barra">
+            <a class="marca" href="index.html">
+                <img src="../assets/images/logo.png" alt="LectoMente" width="42" height="42">
+                <span>LectoMente</span>
+            </a>
+            <button class="btn-menu" id="btn-menu" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navegacion">
+                <span class="hamburguesa"></span>
+            </button>
+            <nav class="navegacion" id="navegacion" aria-label="Navegación principal">
+                <ul class="menu">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#caracteristicas">Características</a></li>
+                    <li><a href="recursos.html">Guía</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+        <section class="seccion">
+            <div class="contenedor confirmacion">
+                <img class="icono-confirmacion" src="../assets/icons/check.png" alt="" width="72" height="72">
+                <p class="etiqueta">Contacto</p>
+                <h1>Tu consulta fue recibida</h1>
+                <p>Gracias por escribirnos. En esta simulación no se envía un correo real.</p>
+                <div class="tarjetas">
+                    <article class="tarjeta">
+                        <img class="icono-tarjeta" src="../assets/icons/leer.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Revisar la guía</h3>
+                        <p>Ahí está el orden de instalación y el primer perfil.</p>
+                        <a href="recursos.html">Ir a la guía</a>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="icono-tarjeta" src="../assets/icons/perfil.png" alt="" width="48" height="48" loading="lazy">
+                        <h3>Volver al inicio</h3>
+                        <p>Puedes seguir leyendo características, testimonios y preguntas.</p>
+                        <a href="index.html">Ir al inicio</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p class="copyright">&copy; 2026 LectoMente.</p>
+        </div>
+    </footer>
+
+    <button type="button" class="btn-subir" id="btn-subir" aria-label="Volver arriba" title="Volver arriba">&#8593;</button>
+</body>
+
+</html>
